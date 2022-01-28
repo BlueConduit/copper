@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="../../dist/css/copper.css">
+  <style>
+    [class^="cu-sidebar-wrapper"] > :first-child {
+      background-color: aquamarine;
+    }
+    [class^="cu-sidebar-wrapper"] > :last-child {
+      background-color: coral;
+    }
+    .example-spacer {
+      margin-bottom: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sidebar Variations</h1>
+  <h2>Left sidebar, wraps on top</h2>
+  <div class="cu-sidebar-wrapper example-spacer">
+    <div class="">
+      The sidebar area
+    </div>
+    <div class="">
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+    </div>
+  </div>
+  <h2>Right sidebar, wraps on top</h2>
+  <div class="cu-sidebar-wrapper--right example-spacer">
+    <div class="">
+      The sidebar area
+    </div>
+    <div class="">
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+    </div>
+  </div>
+
+  <!-- Note that the variable area is now first -->
+  <h2>Left sidebar, wraps on bottom</h2>
+  <div class="cu-sidebar-wrapper--below example-spacer">
+    <div class="">
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+    </div>
+    <div class="">
+      The sidebar area
+    </div>
+  </div>
+  <h2>Right sidebar, wraps on bottom</h2>
+  <div class="cu-sidebar-wrapper--right--below example-spacer">
+    <div class="">
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+      <p>The variable size area</p>
+    </div>
+    <div class="">
+      The sidebar area
+    </div>
+  </div>
+</body>
+</html>

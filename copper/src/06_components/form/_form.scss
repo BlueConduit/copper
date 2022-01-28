@@ -1,0 +1,108 @@
+@use "../../01_settings/design-tokens" as dt;
+@use "../../02_tools/functions";
+@use "../../02_tools/mixins";
+// @use'd so we can extend the stack layout class
+@use "../../05_layout/stack";
+
+@mixin invalid-select-background-image {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10H7Z' fill='%231E2329'/%3E%3C/svg%3E%0A");
+}
+@mixin valid-select-background-image {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10H7Z' fill='%2331C48D'/%3E%3C/svg%3E%0A"); 
+}
+
+.cu-form {
+  @include stack.stack-layout-mixin("md");
+
+  &.cu-form--was-validated {
+    &
+    select:invalid,
+    input[type='text']:invalid,
+    textarea:invalid {
+      border-color: dt.$notification_error;
+
+      & ~ .cu-form__help-text {
+        display: none;
+      }
+      & ~ .cu-form__invalid-text {
+        display: block;
+      }
+    }
+
+    &
+    select:valid,
+    input[type='text']:valid,
+    textarea:valid {
+      border-color: dt.$notification_success;
+      
+      & ~ .cu-form__help-text {
+        display: block;
+      }
+    }
+    
+    
+    // These two selectors are going here, rather than in _select.scss, because
+    // we only want them to be applied once the .cu-form--was-validated class
+    // has been added to a form. We're keeping all that "after validation 
+    // "logic here in place.
+    & select:invalid {
+      @include invalid-select-background-image;
+    }
+    & select:valid {
+      @include valid-select-background-image;
+    }
+  }
+
+}
+
+.cu-form__group {
+  @include stack.stack-layout-mixin("sm");
+
+  // Classes for manually applying validation status, rather than relying on the
+  // HTML validation method above
+  & .cu-form--is-invalid {
+    border-color: dt.$notification_error;
+    & ~ .cu-form__help-text {
+      display: none;
+    }
+    & ~ .cu-form__invalid-text {
+      display: block;
+    }
+  }
+  & select.cu-form--is-invalid {
+    @include invalid-select-background-image;
+  }
+  
+  & .cu-form--is-valid {
+    border-color: dt.$notification_success;
+  }
+  & select.cu-form--is-valid {
+    @include valid-select-background-image;
+  }
+
+}
+fieldset.cu-form__group {
+  padding: 0;
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.cu-form__label {
+  font-size: 0.875rem;
+  @include mixins.typography-semi-bold();
+}
+
+.cu-form__help-text,
+.cu-form__invalid-text {
+  font-size: 0.8rem;
+}
+
+.cu-form__help-text {
+  display: block;
+}
+
+.cu-form__invalid-text {
+  display: none;
+  color: dt.$notification_error;
+}

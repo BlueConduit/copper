@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../01_settings/design-tokens" as dt;
+
+@function getSpacing($size) {
+    @return map.get(dt.$spacings, $size);
+}

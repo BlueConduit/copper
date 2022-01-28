@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../dist/css/copper.css">
+  <title>Checks</title>
+</head>
+<body>
+  <div class="cu-center">
+    <h1>Checks</h1>
+    <h2>Checkboxes</h2>
+    <div class="cu-check" style="margin-bottom: 3rem;">
+      <input class="cu-check__input" type="checkbox" name="Checkbox" id="checkbox">
+      <label class="cu-check__label" for="checkbox">Single checkbox</label>
+    </div>
+    <form action="" class="cu-form" novalidate>
+      <fieldset class="cu-form__group">
+        <legend>Checkbox group</legend>
+        <div class="cu-check">
+          <input class="cu-check__input" type="checkbox" name="one" id="one" required>
+          <label class="cu-check__label" for="one">One</label>
+          <span class="cu-form__invalid-text">You gotta at least check this one</span>
+        </div>
+        <div class="cu-check">
+          <input class="cu-check__input" type="checkbox" name="two" id="two">
+          <label class="cu-check__label" for="two">Two</label>
+        </div>
+        <div class="cu-check">
+          <input class="cu-check__input" type="checkbox" name="three" id="three" disabled>
+          <label class="cu-check__label" for="three">Three</label>
+        </div>
+      </fieldset>
+      <button class="cu-button" type="submit">Submit</button>
+    </form>
+
+    <h2>Radio Buttons</h2>
+    <p>You should always start with one radio button checked. Starting without any radio buttons checked is a UI state that users can't return to after they check one, which is generally considered poor design.</p>
+    <form class="cu-form" novalidate>
+      <fieldset class="cu-form__group">
+        <legend>Radio button group</legend>
+        <div class="cu-check">
+          <input type="radio" class="cu-check__input" id="first-radio" name="first-group" value="ONE" checked>
+          <label for="first-radio" class="cu-check__label">First option</label>
+        </div>
+        <div class="cu-check">
+          <input type="radio" class="cu-check__input" id="second-radio" name="first-group" value="TWO">
+          <label for="second-radio" class="cu-check__label">Second option</label>
+        </div>
+        <div class="cu-check">
+          <input type="radio" class="cu-check__input" id="third-radio" name="first-group" value="THREE" disabled>
+          <label for="third-radio" class="cu-check__label">Second option</label>
+        </div>
+        <button class="cu-button" type="submit">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+</body>
+<script>
+const validate = () => {
+  'use strict';
+  const forms = document.querySelectorAll('.cu-form');
+
+  forms.forEach((form) => {
+    form.addEventListener('submit', function(event) {
+      console.log(form)
+      if (!form.checkValidity()) {
+        console.log("hello")
+        event.preventDefault();
+        form.classList.add('cu-form--was-validated');
+      }
+    }, false)
+  })
+}
+validate();
+</script>
+</html>

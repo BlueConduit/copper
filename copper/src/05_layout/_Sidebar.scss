@@ -1,0 +1,109 @@
+/* 
+  The Sidebar layout primitive is inspired by the Sidebar from Every Layout
+
+  Chose your class based on how you want the sidebar positioned and how you
+  want things to wrap on small screens.
+
+  These sidebar wrapper classes expect only two children, the sidebar and 
+  content area containers. Need to test what happens if this guideline isn't 
+  followed.
+*/
+
+@mixin sidebarChild {
+  // The width of the sidebar when it IS a sidebar
+  // TODO Decide if we should include this or not. If we DON'T specify a 
+  // flex-basis here, then the sidebar will have an intrinsic width. This means
+  // it would grow to the size of its content. Example: if it included a picture 
+  // we said should be 200px wide, then the sidebar would grow to be 200px. 
+  // Wrapping behavior would be unchanged
+  flex-basis: 20rem; 
+  flex-grow: 1;
+}
+@mixin growingChild {
+  flex-basis: 0;
+  flex-grow: 999;
+  // Controls where the wrapping happens
+  min-width: 50%;
+}
+
+@mixin gutterWidth {
+  gap: 1rem;
+}
+
+// Sidebar on left, sidebar wraps on top
+.cu-sidebar-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Adds a gutter between the sidebar and not sidebar areas
+  &.cu-sidebar-wrapper--gutter {
+    @include gutterWidth();
+  }
+
+  & > :first-child {
+    @include sidebarChild();
+  }
+
+  & > :last-child {
+    @include growingChild();
+  }
+}
+
+// Sidebar on right, sidebar wraps on top
+.cu-sidebar-wrapper--right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+  // Adds a gutter between the sidebar and not sidebar areas
+  &.cu-sidebar-wrapper--gutter {
+    @include gutterWidth();
+  }
+
+  & > :first-child {
+    @include sidebarChild();
+  }
+
+  & > :last-child {
+    @include growingChild();
+  }
+}
+
+// Sidebar on left, sidebar wraps below
+.cu-sidebar-wrapper--below {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+  // Adds a gutter between the sidebar and not sidebar areas
+  &.cu-sidebar-wrapper--gutter {
+    @include gutterWidth();
+  }
+
+  & > :last-child {
+    @include sidebarChild();
+  }
+
+  & > :first-child {
+    @include growingChild();
+  }
+}
+
+// Sidebar on right, sidebar wraps below
+.cu-sidebar-wrapper--right--below {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Adds a gutter between the sidebar and not sidebar areas
+  &.cu-sidebar-wrapper--gutter {
+    @include gutterWidth();
+  }
+
+  & > :last-child {
+    @include sidebarChild();
+  }
+
+  & > :first-child {
+    @include growingChild();
+  }
+}

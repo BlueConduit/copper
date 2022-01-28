@@ -1,0 +1,38 @@
+{
+  "name": "@blueconduit/copper",
+  "version": "0.8.0",
+  "description": "BlueConduit's design system",
+  "author": "Jackson Hammond",
+  "license": "LicenseRef-LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlueConduit/service-line-pipeline.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "design",
+    "system"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "test",
+    "build": "gulp build",
+    "build:watch": "gulp watchStyles"
+  },
+  "dependencies": {
+    "sass": "^1.38.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-install": "^1.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0"
+  }
+}

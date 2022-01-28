@@ -1,0 +1,44 @@
+@use "../01_settings/design-tokens" as dt;
+@use "../01_settings/fonts";
+
+// Accessibility
+
+// Courtesy of the the A11y Project
+// https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/ 
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Spacing
+
+// Typography
+@mixin typography-base {
+  font-family: fonts.$font-stack;
+  font-weight: 400;
+  line-height: 1.6;
+  color: dt.$text_dark;
+}
+
+@mixin typography-no-bold {
+  font-weight: 400;
+}
+
+@mixin typography-semi-bold {
+  font-weight: 600;
+}
+
+@mixin typography-bold {
+  font-weight: 700;
+}
+
+// Borders
+// Does this mixin need to be a more general border?
+@mixin checkbox-border {
+  border: 1px solid dt.$border_color;
+}

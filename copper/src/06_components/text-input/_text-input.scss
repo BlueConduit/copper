@@ -1,0 +1,29 @@
+@use "../../01_settings/design-tokens" as dt;
+@use "../../02_tools/functions";
+@use "../../02_tools/mixins";
+
+.cu-text-input {
+  border: 1px solid dt.$border_color;
+  border-radius: dt.$border-radius;
+  padding: functions.getSpacing("sm");
+
+  &:focus
+  &:focus-visible,
+  &.cu-text-input--focus {
+    outline: 1px solid dt.$primary;
+    box-shadow: 0px 0px 10px rgba(92, 163, 234, 0.3);
+  }
+
+  // &:invalid,
+  &.cu-text-input--invalid {
+    background-color: rgba(dt.$notification_error, 0.1);
+    border: 1px solid dt.$notification_error;
+  }
+
+  &:disabled,.cu-text-input--disabled {
+    cursor: not-allowed;
+    color: dt.$text_inactive;
+    background-color: dt.$disabled_color;
+    border: 1px solid dt.$text_inactive;
+  }
+}

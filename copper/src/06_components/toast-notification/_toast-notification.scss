@@ -1,0 +1,78 @@
+@use "../../01_settings/design-tokens" as dt;
+@use "../../02_tools/mixins";
+
+.cu-toast-notification {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 18.75rem;
+  height: 5rem;
+  border-radius: dt.$border-radius;
+  box-shadow: dt.$modal-shadow-default;
+  background-color: dt.$notification_info_background;
+  border: 1px solid dt.$notification_info;
+  color: dt.$notification_info;
+
+  &.cu-toast-notification--warning {
+    background-color: dt.$notification_warning_background;
+    border-color: dt.$notification_warning;
+    color: dt.$notification_warning;
+  }
+
+  &.cu-toast-notification--success {
+    background-color: dt.$notification_success_background;
+    border-color: dt.$notification_success;
+    color: dt.$notification_success;
+  }
+
+  &.cu-toast-notification--error {
+    background-color: dt.$notification_error_background;
+    border-color: dt.$notification_error;
+    color: dt.$notification_error;
+  }
+
+  .cu-toast-notification__content {
+    display: flex;
+    flex-direction: row;
+    padding: 1.25rem;
+  }
+
+  .cu-toast-notification__icon {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+  }
+  
+  .cu-toast-notification__text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2
+  }
+
+  .cu-toast-notification__header {
+    display: flex;
+    @include mixins.typography-base;
+    @include mixins.typography-semi-bold;
+    color: dt.$notification_info;
+    font-size: 0.875rem;
+
+    &.cu-toast-notification__header--warning {
+      color: dt.$notification_warning;
+    }
+
+    &.cu-toast-notification__header--success {
+      color: dt.$notification_success;
+    }
+
+    &.cu-toast-notification__header--error {
+      color: dt.$notification_error;
+    }
+  }
+
+  .cu-toast-notification__message {
+    display: flex;
+    @include mixins.typography-base;
+    font-size: 0.75rem;
+  }
+}

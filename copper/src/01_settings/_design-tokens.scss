@@ -1,0 +1,79 @@
+/**
+ BlueConduit's Copper Design System
+
+ This file contains our design tokens. For the most part, this is the only
+ place we should be hard-coding values for our design tokens. The rest of the
+ styles will inherit from these values; they are the source of truth.
+**/
+
+// COLORS /////////////////////////////////////////////////////////////////////
+
+// Brand colors
+$primary: #5ca3ea;
+$secondary01: #164e87;
+$secondary02: #0b2553;
+$support: #f7d694;
+$support01: #fac756;
+
+// Product Colors
+$text_dark: #1e2329;
+$text_white: #ffffff;
+$text_link: #5ca3ea;
+$text_inactive: #707a8a;
+$product_background: #f4f5f7;
+$white_background: #ffffff;
+$border_color: rgba(0, 0, 0, 0.2);
+$table_border_color: rbga(0, 0, 0, 0.1);
+$highlight_color: rgba(92, 163, 234, 0.1);
+$disabled_color: #efefef;
+
+// Notification Colors
+$notification_error: #f37579;
+$notification_success: #31c48d;
+$notification_warning: #fac756;
+$notification_info: #5ca3ea;
+$notification_error_background: rgba(243, 117, 121, 0.1);
+$notification_success_background: rgba(49, 196, 141, 0.1);
+$notification_warning_background: rgba(250, 199, 86, 0.1);
+$notification_info_background: rgba(92, 163, 234, 0.1);;
+
+
+// SPACING ////////////////////////////////////////////////////////////////////
+
+// Spacing tokens
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+
+// Max width for text elements
+$max-width: 60ch;
+
+// Map for getters
+$spacings: (
+  "xs": $spacing-xs,
+  "sm": $spacing-sm,
+  "md": $spacing-md,
+  "lg": $spacing-lg,
+  "xl": $spacing-xl,
+);
+
+// SHADOWS 
+
+// Button shadows
+$button-shadow-default: 0px 1px 2px rgba(0, 0, 0, 0.1);
+$button-shadow-hovered: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+// Card shadows
+$card-shadow-default: 0px 0px 20px rgba(0, 0, 0, 0.04);
+$card-shadow-hovered: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+// Modal shadows
+$modal-shadow-default: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+// Form input focus
+$form-input-focus-shadow: 0px 0px 10px rgba(92, 163, 234, 0.3);
+
+// CORNERS
+$border-radius: 0.25rem;

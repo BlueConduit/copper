@@ -1,0 +1,98 @@
+@use "../../01_settings/design-tokens" as dt;
+
+.cu-datatable-sort {
+  appearance: none;
+  background: none;
+  border: 0;
+  width: 100%;
+  min-height: 100%;
+  font-weight: inherit;
+  cursor: pointer;
+
+  & .cu-datatable-sort__icon {
+    display: none;
+  }
+
+  & .cu-datatable-sort__icon--unsorted {
+    opacity: 0;
+  }
+
+  &:hover .cu-datatable-sort__icon--unsorted {
+    opacity: 1;
+  }
+  
+
+  &.cu-datatable-sort--active {
+    & .cu-datatable-sort__icon {
+      display: block;
+    }
+
+    & .cu-datatable-sort__icon--unsorted {
+      display: none;
+    }
+  }
+
+  &.cu-datatable-sort--asc .cu-datatable-sort__icon {
+    transform: rotate(180deg);
+  }
+
+  & .cu-datatable-sort__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// Much of these flexbox styles are inspired by the Sidebar layout primitive
+.cu-datatable__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+
+  & .cu-datatable__pagination__left-controls {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 35%;
+    
+    & select {
+      width: 5rem;
+      padding: 0.25em 1em 0.25em 0.5em;
+      background-position: right 0.5em bottom 50%;
+    }
+    & > * + * {
+      margin-left: 0.5rem;
+    }
+  }
+  
+  & .cu-datatable__pagination__right-controls {
+    flex-grow: 1;
+    & > * + * {
+      margin-left: 1rem;
+    }
+
+    & .cu-datatable__pagination__page-nums > * + * {
+      margin-left: 0.25rem;
+    }
+    & .cu-datatable__pagination__page-num {
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      border: none;
+      cursor: pointer;
+      appearance: none;
+      text-align: center;
+      background-color: dt.$white_background;
+    }
+    & .cu-datatable__pagination__page-num--active {
+      background-color: dt.$primary;
+      color: dt.$text_white;
+    }
+  }
+}
+
+.cu-datatable__edit-icon svg {
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0;
+}
+.cu-datatable__edit-icon svg:hover {
+  background-color: lightgray;
+}

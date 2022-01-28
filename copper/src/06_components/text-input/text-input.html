@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Input</title>
+  <link rel="stylesheet" href="../../../dist/css/copper.css">
+</head>
+<body>
+  <div class="cu-center">
+    <h3>Validation on submission</h3>
+    <form class="cu-center cu-form" novalidate>
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="first">Text input *</label>
+        <input class="cu-text-input" type="text" name="first" id="first" required>
+        <span class="cu-form__help-text">Helpful message</span>
+        <span class="cu-form__invalid-text">Uh oh, this field is required!</span>
+      </div>
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="focused">Second input</label>
+        <input class="cu-text-input" type="text" name="second" id="second">
+      </div>
+      <button class="cu-button" type="submit">Submit</button>
+    </form>
+
+    <h3>Manual css class application</h3>
+    <form class="cu-center cu-form">
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="default">Text input</label>
+        <input class="cu-text-input" type="text" name="default" id="default">
+        <span class="cu-form__help-text">Helpful message</span>
+      </div>
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="focused">Focused input</label>
+        <input class="cu-text-input cu-text-input--focus" type="text" name="focused" id="focused">
+      </div>
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="invalid">Invalid input</label>
+        <input class="cu-text-input cu-form--is-invalid" type="text" name="invalid" id="invalid">
+        <span class="cu-form__help-text">Helpful message</span>
+        <span class="cu-form__invalid-text">Your error message</span>
+      </div>
+      <div class="cu-form__group">
+        <label class="cu-form__label" for="disabled">Disabled input</label>
+        <input class="cu-text-input cu-text-input--disabled" type="text" name="disabled" id="disabled" disabled>
+        <span class="cu-form__help-text">This is disabled</span>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+const validate = () => {
+  'use strict';
+  const forms = document.querySelectorAll('.cu-form');
+
+  forms.forEach((form) => {
+    form.addEventListener('submit', function(event) {
+      console.log(form)
+      if (!form.checkValidity()) {
+        console.log("hello")
+        event.preventDefault();
+        form.classList.add('cu-form--was-validated');
+      }
+    }, false)
+  })
+}
+validate();
+</script>
+</html>

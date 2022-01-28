@@ -1,0 +1,24 @@
+@use "../02_tools/mixins";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  @include mixins.typography-base;
+}
+
+h1 {
+  font-size: 2rem;
+  @include mixins.typography-bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  @include mixins.typography-bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  @include mixins.typography-no-bold;
+}

@@ -1,0 +1,56 @@
+@use "../../01_settings/design-tokens" as dt;
+@use "../../02_tools/functions";
+@use "../../02_tools/mixins";
+
+.cu-table-wrapper {
+  color: dt.$text_dark;
+  border-radius: dt.$border-radius;
+  box-shadow: dt.$card-shadow-default;
+  width: 100%;
+  background-color: white;
+  overflow-x: auto;
+}
+
+.cu-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  // Tables won't go below 650px in width,
+  // they will scroll after that.
+  min-width: 650px;
+  @include mixins.typography-base;
+
+  & tr {
+    vertical-align: middle;
+  }
+
+  & th {
+    vertical-align: inherit;
+    text-align: left;
+    @include mixins.typography-semi-bold;
+    padding-left: functions.getSpacing("md");
+    height: 57px;
+    border-bottom: 1px solid dt.$product_background;
+
+    &:hover.cu-table__heading--clickable {
+      cursor: pointer;
+      background-color: dt.$product_background;
+    }
+  }
+
+  & tbody > tr:hover {
+    background-color: dt.$highlight_color;
+
+    & svg {
+      opacity: 1;
+    }
+  }
+
+  & td {
+    vertical-align: inherit;
+    text-align: left;
+    padding: functions.getSpacing("md");
+    border-bottom: 1px solid dt.$product_background;
+  }
+}

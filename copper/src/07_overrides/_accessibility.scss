@@ -1,0 +1,7 @@
+@use "../02_tools/mixins";
+
+// Creating an override class to visually hide an element but keep it available
+// to screen readers.
+.visually-hidden {
+  @include mixins.visually-hidden
+}

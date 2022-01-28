@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select</title>
+  <link rel="stylesheet" href="../../../dist/css/copper.css">
+</head>
+<body>
+  <div class="cu-center">
+    <h3>Interactive, try submitting these forms</h3>
+    <form class="cu-form" novalidate>
+      <div class="cu-form__group">
+        <label for="options">Dropdown label</label>
+        <select class="cu-select-input" name="options" id="options" required>
+          <option value="">- Select -</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="cu-form__help-text">A helpful message here</span>
+        <span class="cu-form__invalid-text">Uh oh, this field is required!</span>
+      </div>
+      <div class="cu-form__group">
+        <label for="second">An additional dropdown</label>
+        <select class="cu-select-input" name="second" id="second" required>
+          <option value="">- Select -</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="cu-form__help-text">Inspirational quote #324</span>
+        <span class="cu-form__invalid-text">Uh oh, this field is required!</span>
+      </div>
+      <div class="cu-form__group">
+        <label for="disabled">Disabled dropdown</label>
+        <select class="cu-select-input" name="disabled" id="disabled" disabled>
+          <option value="">- Select -</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="cu-form__help-text">Can't click here</span>
+      </div>
+      <button class="cu-button" type="submit">Submit</button>
+    </form>
+  
+    <h3>Hard coded to show manual application of styles</h3>
+    <form class="cu-form">
+      <div class="cu-form__group">
+        <label for="options">Dropdown label</label>
+        <select class="cu-select-input cu-form--is-invalid" name="options" id="options">
+          <option value="">- Select -</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="cu-form__help-text">A helpful message here</span>
+        <span class="cu-form__invalid-text">An error message here</span>
+      </div>
+      <div class="cu-form__group">
+        <label for="second">An additional dropdown</label>
+        <select class="cu-select-input cu-form--is-valid" name="second" id="second">
+          <option value="">- Select -</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="cu-form__help-text">Inspirational quote #324</span>
+      </div>
+    </form>
+  </div>
+</body>
+<script>  
+const validate = () => {
+  'use strict';
+  const forms = document.querySelectorAll('.cu-form');
+
+  forms.forEach((form) => {
+    form.addEventListener('submit', function(event) {
+      console.log(form)
+      if (!form.checkValidity()) {
+        console.log("hello")
+        event.preventDefault();
+        form.classList.add('cu-form--was-validated');
+      }
+    }, false)
+  })
+}
+validate();
+</script>
+</html>

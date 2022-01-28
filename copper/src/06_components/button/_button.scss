@@ -1,0 +1,53 @@
+@use "../../01_settings/design-tokens" as dt;
+@use "../../02_tools/functions";
+@use "../../02_tools/mixins";
+
+@mixin button-disabled {
+  pointer-events: none;
+}
+
+.cu-button {
+  border-radius: dt.$border-radius;
+  padding: functions.getSpacing("sm") functions.getSpacing("md");
+  @include mixins.typography-semi-bold;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: dt.$secondary01;
+  color: dt.$text_white;
+  box-shadow: dt.$button-shadow-default;
+  // Prevents button from taking the entire width of a container when it's used
+  // in a flex container with flex-direction: column
+  align-self: flex-start;
+
+  &:hover {
+    background-color: dt.$secondary02;
+    box-shadow: dt.$button-shadow-hovered;
+  }
+
+  &:disabled {
+    @include button-disabled;
+    opacity: 0.3;
+  }
+
+}
+
+.cu-button-secondary {
+  background-color: dt.$support;
+  color: dt.$text_dark;
+
+  &:hover {
+    background-color: dt.$support01;
+  }
+}
+
+.cu-button-grey {
+  background-color: dt.$product_background;
+  color: dt.$text_dark;
+
+  &:hover {
+    background-color: dt.$product_background;
+  }
+}

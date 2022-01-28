@@ -1,0 +1,21 @@
+@use "../01_settings/design-tokens" as dt;
+
+// Center a group of content
+.cu-center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: dt.$max-width
+}
+
+// Center a group of content with intrinsic centering, or based on their 
+// natural, content-based widths
+.cu-center-all {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: dt.$max-width;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
