@@ -2,6 +2,8 @@
 
 Here it is, the first readme for version 0 of Copper, BlueConduit's design system.
 
+NOTE: The install instructions and details about getting tokens will be changing when we're publishing the package to npm as version 1.0.0
+
 ## Packages
 
 ### copper
