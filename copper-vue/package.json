@@ -1,15 +1,17 @@
 {
   "name": "@blueconduit/copper-vue",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A Vue.js implementation of the Copper design system",
   "author": "Jackson Hammond",
-  "license": "LicenseRef-LICENSE",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlueConduit/service-line-pipeline.git"
+    "url": "https://github.com/BlueConduit/copper.git",
+    "directory": "packages/copper-vue"
   },
+  "bugs": "https://github.com/BlueConduit/copper/issues",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "main": "dist/copper-vue.common.js",
   "files": [
