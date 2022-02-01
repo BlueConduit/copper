@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "useWorkspaces": true,
+  "ignoreChanges": [
+    "actions/**",
+    "**/*.md"
+  ]
+}
