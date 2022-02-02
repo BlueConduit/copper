@@ -1,13 +1,15 @@
 <template>
   <div class="cu-center">
-    <p>Click the button to open the modal</p>
+    <p>Use the <code>dismissable</code> prop to prevent the modal from closing when someone clicks outside of it.</p>
     <Button @click="handleOpenModal">Open</Button>
   </div>
   <Modal
     :visible="showModal"
+    :dismissable="false"
     @close-modal="handleCloseModal"
   >
-    Hey there! Click outside this box to close me!
+    You have to click the button to close me!
+    <Button @click="handleCloseModal">Close</Button>
   </Modal>
 </template>
 
@@ -18,7 +20,7 @@ import Button from "../Button/Button.vue";
 import Modal from "./Modal.vue";
 
 export default {
-  name: "ModalSimple",
+  name: "ModalBlocking",
   components: {
     Button,
     Modal,
