@@ -37,8 +37,12 @@
   font-weight: 700;
 }
 
-// Borders
+// Borders & Shadows
 // Does this mixin need to be a more general border?
 @mixin checkbox-border {
   border: 1px solid dt.$border_color;
+}
+
+@mixin modal-shadow {
+  box-shadow: dt.$modal-shadow-default;
 }

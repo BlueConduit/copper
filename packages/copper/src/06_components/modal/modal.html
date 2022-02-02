@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../dist/css/copper.css">
+  <title>Modal</title>
+</head>
+<body>
+  <div id='simple-modal' class="cu-modal">
+    <div class="cu-modal__content">
+      <div>Content goes in here</div> 
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <button id='close' class="cu-button">Close</button>
+    </div>
+  </div>
+
+  <div class="cu-center">
+    <p>This is our modal, click the button to see it.</p>
+    <button id='open' class="cu-button">Open!</button>
+  </div>
+</body>
+<script>
+  const showModal = () => {
+    'use strict';
+    const modal = document.querySelector('#simple-modal');
+    const openButton = document.querySelector('#open');
+    const closeButton = document.querySelector('#close');
+
+    // Open the modal
+    openButton.onclick = function() {
+      modal.classList.add('cu-modal--visible');
+    }
+
+    // Close the modal
+    closeButton.onclick = function() {
+      modal.classList.remove('cu-modal--visible');
+    }
+    // Close the modal when we click on the backdrop
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.classList.remove('cu-modal--visible');
+      }
+    }
+  }
+  showModal();
+</script>
+</html>
