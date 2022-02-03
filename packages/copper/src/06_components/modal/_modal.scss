@@ -27,7 +27,18 @@
     padding: functions.getSpacing('md');
     max-height: calc(100% - (functions.getSpacing('lg') * 2));
     max-width: 400px;
-    width: 350px;
+    width: calc(100% - (functions.getSpacing('lg') * 2));
     @include mixins.modal-shadow;
+    
+    &.cu-modal__content--small {
+      max-width: 200px;
+    }
+    &.cu-modal__content--medium {
+      max-width: 500px;
+    }
+    &.cu-modal__content--large {
+      max-width: 900px;
+    }
   }
+  
 }
