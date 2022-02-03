@@ -1,0 +1,23 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Setup Node 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Workspace install
+      run: npm install
+
+    - name: Build
+      run: npm run build
