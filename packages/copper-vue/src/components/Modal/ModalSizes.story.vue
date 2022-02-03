@@ -3,32 +3,32 @@
     <p>Click the button to open the modal</p>
     <Button @click="handleOpenModal">Open</Button>
     <p>Pick a size!</p>
-    <Button 
+    <Button
       @click="setSize('')"
-      :variant="modalSize === '' ? 'primary': 'grey'"
+      :variant="modalSize === '' ? 'primary' : 'grey'"
     >
       Default
     </Button>
-    <Button 
+    <Button
       @click="setSize('small')"
-      :variant="modalSize === 'small' ? 'primary': 'grey'"
+      :variant="modalSize === 'small' ? 'primary' : 'grey'"
     >
       Small
     </Button>
-    <Button 
+    <Button
       @click="setSize('medium')"
-      :variant="modalSize === 'medium' ? 'primary': 'grey'"  
+      :variant="modalSize === 'medium' ? 'primary' : 'grey'"
     >
       Medium
     </Button>
     <Button
       @click="setSize('large')"
-      :variant="modalSize === 'large' ? 'primary': 'grey'"
+      :variant="modalSize === 'large' ? 'primary' : 'grey'"
     >
       Large
     </Button>
   </div>
-  
+
   <Modal
     :visible="showModal"
     :max-width="modalSize"
@@ -52,16 +52,16 @@ export default {
   },
   setup() {
     const showModal = ref(false);
-    const modalSize = ref('');
+    const modalSize = ref("");
     const setSize = (value) => {
       modalSize.value = value;
-    }
+    };
     const handleCloseModal = () => {
       showModal.value = false;
     };
     const handleOpenModal = () => {
       showModal.value = true;
-    }
+    };
 
     return {
       showModal,
@@ -69,7 +69,7 @@ export default {
       setSize,
       handleCloseModal,
       handleOpenModal,
-    }
-  }
-}
+    };
+  },
+};
 </script>

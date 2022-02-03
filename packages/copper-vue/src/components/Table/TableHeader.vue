@@ -2,7 +2,7 @@
   <th
     scope="col"
     :aria-sort="ariaSort"
-    :class="{'cu-table__heading--clickable': clickable}"
+    :class="{ 'cu-table__heading--clickable': clickable }"
   >
     <slot />
   </th>
@@ -22,14 +22,14 @@ export default {
 
     /**
      * Sets the `aria-sort` property. Use this if the column is being sorted
-     * to help users who are using screen readers. 
+     * to help users who are using screen readers.
      */
     ariaSort: {
       type: String,
       validator(value) {
-        return ['none', 'ascending', 'descending', ''].includes(value);
-      }
-    }
+        return ["none", "ascending", "descending", ""].includes(value);
+      },
+    },
   },
 };
 </script>

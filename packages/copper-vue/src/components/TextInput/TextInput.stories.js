@@ -5,16 +5,16 @@ export default {
   component: TextInput,
   argTypes: {
     type: {
-      options: ['text', 'email', 'password'],
+      options: ["text", "email", "password"],
       control: { type: "select" },
-    }
-  }
+    },
+  },
 };
 
 const Template = (args) => ({
   components: { TextInput },
   setup() {
-    return { args }
+    return { args };
   },
   template: `<TextInput v-bind="args" />`,
 });
@@ -24,7 +24,7 @@ RegularInput.args = {
   id: "regular-input",
   name: "regular-input",
   label: "Regular Text Input",
-}
+};
 
 export const InvalidInput = Template.bind({});
 InvalidInput.args = {
@@ -33,7 +33,7 @@ InvalidInput.args = {
   label: "Invalid Input",
   invalid: true,
   invalidText: "Your input was invalid",
-}
+};
 
 export const DisabledInput = Template.bind({});
 DisabledInput.args = {
@@ -41,22 +41,22 @@ DisabledInput.args = {
   name: "disabled-input",
   label: "Disabled Input",
   disabled: true,
-}
+};
 
 const InteractiveTemplate = (args) => ({
   components: { TextInput },
   setup() {
     return { args };
   },
-  data () {
+  data() {
     return {
-      myValue: '',
-    }
+      myValue: "",
+    };
   },
   template: `
     <TextInput v-bind="args" v-model:value="myValue" />
     <div>{{ myValue }}</div>  
-  `
+  `,
 });
 
 export const InteractiveInput = InteractiveTemplate.bind({});
@@ -65,4 +65,4 @@ InteractiveInput.args = {
   name: "interactive",
   label: "An interactive input",
   helperText: "Is this field right?",
-}
+};

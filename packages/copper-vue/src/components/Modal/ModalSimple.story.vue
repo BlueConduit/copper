@@ -3,10 +3,7 @@
     <p>Click the button to open the modal</p>
     <Button @click="handleOpenModal">Open</Button>
   </div>
-  <Modal
-    :visible="showModal"
-    @close-modal="handleCloseModal"
-  >
+  <Modal :visible="showModal" @close-modal="handleCloseModal">
     Hey there! Click outside this box to close me!
   </Modal>
 </template>
@@ -30,13 +27,13 @@ export default {
     };
     const handleOpenModal = () => {
       showModal.value = true;
-    }
+    };
 
     return {
       showModal,
       handleCloseModal,
       handleOpenModal,
-    }
-  }
-}
+    };
+  },
+};
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div class="cu-form__group">
     <label :for="id">{{ label }}</label>
-    <select 
-      :name="id" 
+    <select
+      :name="id"
       :id="id"
       :value="value"
       :class="selectClasses"
@@ -11,32 +11,23 @@
     >
       <slot></slot>
     </select>
-    
-    <span
-      v-if="helperText"
-      :class="helpTextClasses"
-    >
+
+    <span v-if="helperText" :class="helpTextClasses">
       {{ helperText }}
     </span>
 
-    <span 
-      v-if="invalidText"
-      :class="invalidTextClasses"  
-    >
+    <span v-if="invalidText" :class="invalidTextClasses">
       {{ invalidText }}
     </span>
-    <span
-      v-else-if="helperText"
-      :class="invalidTextClasses"
-    >
+    <span v-else-if="helperText" :class="invalidTextClasses">
       {{ helperText }}
     </span>
   </div>
 </template>
 
 <script>
-import { reactive, computed } from 'vue'
-import classNames from 'classnames';
+import { reactive, computed } from "vue";
+import classNames from "classnames";
 export default {
   name: "Select",
   inheritAttrs: false,
@@ -63,45 +54,40 @@ export default {
       default: false,
     },
     /**
-     * A string of text to help the user understand what this field is for. 
+     * A string of text to help the user understand what this field is for.
      */
     helperText: {
       type: String,
-      default: '',
+      default: "",
     },
     /**
-     * A string to show when the input's value is invalid after validation 
+     * A string to show when the input's value is invalid after validation
      * was done. If the input is being marked "required" then you should
-     * always provide a string here.   
+     * always provide a string here.
      */
     invalidText: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   setup(props) {
     props = reactive(props);
 
-    const selectClasses = computed(() => classNames(
-      "cu-select-input",
-      {
+    const selectClasses = computed(() =>
+      classNames("cu-select-input", {
         "cu-form--is-invalid": props.invalid,
-      }
-    ));
+      })
+    );
 
-    const helpTextClasses = computed(() => ([
-      "cu-form__help-text"
-    ]));
-    
-    const invalidTextClasses = computed(() => [
-      'cu-form__invalid-text',
-    ]);
-    
+    const helpTextClasses = computed(() => ["cu-form__help-text"]);
+
+    const invalidTextClasses = computed(() => ["cu-form__invalid-text"]);
+
     return {
       selectClasses,
       helpTextClasses,
       invalidTextClasses,
-    }
-  }
-}
+    };
+  },
+};
 </script>

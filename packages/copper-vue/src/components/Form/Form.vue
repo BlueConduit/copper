@@ -1,14 +1,11 @@
 <template>
-  <form
-    :class="[formClasses, className]"
-    :novalidate="novalidate"
-  >
+  <form :class="[formClasses, className]" :novalidate="novalidate">
     <slot></slot>
   </form>
 </template>
 
 <script>
-import { computed, reactive } from 'vue'
+import { computed, reactive } from "vue";
 export default {
   name: "Form",
   props: {
@@ -17,7 +14,7 @@ export default {
      */
     className: {
       type: String,
-      default: '',
+      default: "",
     },
     /**
      * Defaults to true, controls where the form is marked as `novalidate`,
@@ -28,14 +25,14 @@ export default {
       default: true,
     },
     /**
-     * True if the form should be "validated". Set this to true after a user 
+     * True if the form should be "validated". Set this to true after a user
      * submits a form but there are some invalid inputs, so that the validation
-     * styles are applied. 
+     * styles are applied.
      */
     isValidated: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   setup(props) {
     props = reactive(props);
@@ -43,15 +40,13 @@ export default {
     const formClasses = computed(() => ({
       "cu-form": true,
       "cu-form--was-validated": props.isValidated,
-    }))
+    }));
 
     return {
       formClasses,
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

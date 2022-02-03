@@ -1,8 +1,6 @@
 <template>
-  <fieldset
-    :class="['cu-form__group']"
-  >
-    <legend> {{ legend }} </legend>
+  <fieldset :class="['cu-form__group']">
+    <legend>{{ legend }}</legend>
     <slot></slot>
   </fieldset>
 </template>
@@ -18,7 +16,7 @@ export default {
     legend: {
       type: String,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
