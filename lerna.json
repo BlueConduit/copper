@@ -7,5 +7,12 @@
   "ignoreChanges": [
     "actions/**",
     "**/*.md"
-  ]
+  ],
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "message": "chore(release): %s"
+    }
+  }
 }
