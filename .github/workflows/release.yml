@@ -27,6 +27,7 @@ jobs:
     - name: Publish packages under the `next` dist tag
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GH_TOKEN: ${{ secrets.GIT_COMMIT_TOKEN }}
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor }}@users.noreply.github.com"
