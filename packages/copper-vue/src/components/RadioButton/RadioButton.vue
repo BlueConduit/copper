@@ -1,6 +1,6 @@
 <template>
   <div class="cu-check">
-    <input 
+    <input
       class="cu-check__input"
       type="radio"
       :id="id"
@@ -9,7 +9,7 @@
       :checked="isChecked"
       @input="$emit('update:modelValue', $event.target.value)"
       v-bind="$attrs"
-    >
+    />
     <label class="cu-check__label" :for="id">
       {{ label }}
     </label>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed } from "vue";
 export default {
   name: "RadioButton",
   inheritAttrs: false,
@@ -51,17 +51,17 @@ export default {
      */
     value: {
       type: [String, Number],
-      default: '',
+      default: "",
     },
     modelValue: {
       type: String,
-    }
+    },
   },
   emits: [
     /**
      * Emitted on checking the radio button
      */
-    'update:modelValue',
+    "update:modelValue",
   ],
   setup(props) {
     const isChecked = computed(() => {
@@ -71,7 +71,7 @@ export default {
     });
     return {
       isChecked,
-    }
-  }
-}
+    };
+  },
+};
 </script>

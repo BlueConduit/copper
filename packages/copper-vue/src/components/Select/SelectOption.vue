@@ -11,7 +11,7 @@ export default {
      */
     value: {
       type: [String, Number],
-      default: '',
+      default: "",
     },
     /**
      * A human-readable label for this value.
@@ -19,7 +19,7 @@ export default {
     label: {
       type: String,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>

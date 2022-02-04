@@ -7,17 +7,17 @@ export default {
   component: Checkbox,
   argTypes: {
     label: {
-      control: { type: "text" }
+      control: { type: "text" },
     },
-  }
+  },
 };
 
 const CheckboxStory = (args) => ({
   components: { Checkbox },
   setup() {
-    return { 
+    return {
       args,
-      onClick: action('onClicked'),
+      onClick: action("onClicked"),
     };
   },
   template: `

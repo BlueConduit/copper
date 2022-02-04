@@ -59,14 +59,13 @@ export default {
   },
   argTypes: {
     headers: {
-      description: "An array of headers for the table"
+      description: "An array of headers for the table",
     },
     rows: {
-      description: "An array of objects, each describes a row of data"
-    }
-  }
+      description: "An array of objects, each describes a row of data",
+    },
+  },
 };
-
 
 const Template = (args) => ({
   components: { Table, TableBody, TableCell, TableHead, TableHeader, TableRow },

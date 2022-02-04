@@ -1,14 +1,12 @@
 # Copper Design System
 
-Here it is, the first readme for version 0 of Copper, BlueConduit's design system.
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-NOTE: The install instructions and details about getting tokens will be changing when we're publishing the package to npm as version 1.0.0
+Welcome to Copper, BlueConduit's design system!
 
-## Packages
+## copper
 
-### copper
-
-This package contains the Sass and CSS styles that control how our components should look and behave. It lives in the `copper/` directory.
+This package contains the Sass and CSS styles that control how our components should look and behave. It lives in the `packages/copper/` directory.
 
 Import the compiled css file in your project to use it.
 
@@ -18,7 +16,7 @@ import "@blueconduit/copper/dist/css/copper.css";
 
 ## copper-vue
 
-This package contains the vue implementations of our components. It lives in the `copper-vue/` directory.
+This package contains the vue implementations of our components. It lives in the `packages/copper-vue/` directory.
 
 Import it into your projects like any other module:
 
@@ -26,31 +24,48 @@ Import it into your projects like any other module:
 import { Button } from "@blueconduit/copper-vue";
 ```
 
+## Contributing
+
+To get started making a contribution from the repo root level run:
+
+```
+npm install
+npm run build
+```
+
+This should install all your dependencies, setup your `husky` git hooks (more on `husky` below), and compile the latest code. You should be good to start writing your changes from there.
+
 ## Installing
 
-You (or your build environment) need to authenticate to Github Packages in order to download any of the packages here. You can do that by configuring the global npm config or by creating a `.npmrc` file in the root of the project that needs to install the package.
+Install the packages as you would any other npm package
 
-### Global npm config
-
-To set the right values in your npm config use these two commands:
 ```
-npm config set //npm.pkg.github.com/:_authToken PERSONAL_ACCESS_TOKEN
-npm config set @blueconduit:registry=https://npm.pkg.github.com
+npm install @blueconduit/copper
 ```
 
-Read about your [npm config here](https://docs.npmjs.com/cli/v6/commands/npm-config)
+or to use the Vue components
 
-### Using a local .npmrc file
+```
+npm install @blueconduit/copper @blueconduit/copper-vue
+```
 
-The `.npmrc` file should be at the root of the project you're installing the `copper` packages in and follow this format:
+### Note for users of version < 1.0.0
+
+Previously, you were required to configure npm, either with your global config for an `.npmrc` file, to look for these packages in the Github package registry. It probably looked something like this:
 
 ```
 //npm.pkg.github.com/:_authToken=PERSONAL_ACCESS_TOKEN
 @blueconduit:registry=https://npm.pkg.github.com
 ```
 
-[Read here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) about how to get a Personal Access Token.
+**This is no longer required.** In fact, if you still have this setup in place you won't be able to download the latest package versions on npm. 
 
-[Read here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages) about authenticating to Github Packages.
+## Publishing new package version
 
-More instructions will come here about using a global npm config when I (Jackson) get the new MacBook. I will get myself configured and create instructions here everyone else can follow.
+We rely on [Lerna](https://lerna.js.org/) to handle versioning and publishing our packages. It also creates our Changelogs. It relies on particular commit messages to automate this process, see the section below for more details.
+
+## Commit Linting
+
+We rely on [`commitlint`](https://github.com/conventional-changelog/commitlint) to enforce standards on all our commit messages, and on [`husky`](https://typicode.github.io/husky/#/) to enable the git hooks to check them after each commit that's made. These hooks should be setup after `npm install`. 
+
+We're using the [convential config](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) for `commitlint`, see its docs for details on how to format your commit messages. 

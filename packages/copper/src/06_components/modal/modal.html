@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../dist/css/copper.css">
+  <title>Modal</title>
+</head>
+<body>
+  <div id='simple-modal' class="cu-modal">
+    <div class="cu-modal__content">
+      <div>Content goes in here</div> 
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <div>More content below it</div>
+      <button id='close' class="cu-button">Close</button>
+    </div>
+  </div>
+
+  <div class="cu-center cu-stack">
+    <p>This is our modal, click the button to see it.</p>
+    <button id='open' class="cu-button">Open!</button>
+    <fieldset class="cu-form__group">
+      <legend>Size</legend>
+      <div class="cu-check">
+        <input type="radio" class="cu-check__input" id="default" name="modal-size" value="" checked onchange="updateModalSize(value)">
+        <label for="default" class="cu-check__label">Default: 400px</label>
+      </div>
+      <div class="cu-check">
+        <input type="radio" class="cu-check__input" id="small" name="modal-size" value="small" onchange="updateModalSize(value)">
+        <label for="small" class="cu-check__label">Small: 200px</label>
+      </div>
+      <div class="cu-check">
+        <input type="radio" class="cu-check__input" id="medium" name="modal-size" value="medium" onchange="updateModalSize(value)">
+        <label for="medium" class="cu-check__label">Medium: 500px</label>
+      </div>
+      <div class="cu-check">
+        <input type="radio" class="cu-check__input" id="large" name="modal-size" value="large" onchange="updateModalSize(value)">
+        <label for="large" class="cu-check__label">Large: 900px</label>
+      </div>
+    </fieldset>
+  </div>
+</body>
+<script>
+  const showModal = () => {
+    'use strict';
+    const modal = document.querySelector('#simple-modal');
+    const openButton = document.querySelector('#open');
+    const closeButton = document.querySelector('#close');
+
+    // Open the modal
+    openButton.onclick = function() {
+      modal.classList.add('cu-modal--visible');
+    }
+
+    // Close the modal
+    closeButton.onclick = function() {
+      modal.classList.remove('cu-modal--visible');
+    }
+    // Close the modal when we click on the backdrop
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.classList.remove('cu-modal--visible');
+      }
+    }
+  }
+  showModal();
+
+  const updateModalSize = (value) => {
+    console.log(value);
+    const modal = document.querySelector('.cu-modal__content');
+    if (value === 'small') {
+      modal.classList.remove('cu-modal__content--medium');
+      modal.classList.remove('cu-modal__content--large');
+      modal.classList.add('cu-modal__content--small');
+    }
+    else if (value === 'medium') {
+      modal.classList.remove('cu-modal__content--small');
+      modal.classList.remove('cu-modal__content--large');
+      modal.classList.add('cu-modal__content--medium');
+    }
+    else if (value === 'large') {
+      modal.classList.remove('cu-modal__content--small');
+      modal.classList.remove('cu-modal__content--medium');
+      modal.classList.add('cu-modal__content--large');
+    }
+    else {
+      modal.classList.remove('cu-modal__content--small');
+      modal.classList.remove('cu-modal__content--medium');
+      modal.classList.remove('cu-modal__content--large');
+    }
+  }
+</script>
+</html>

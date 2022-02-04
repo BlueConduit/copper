@@ -1,5 +1,7 @@
 # copper-vue
 
+<a href="https://www.npmjs.com/package/@blueconduit/copper-vue"><img alt="NPM Status" src="https://img.shields.io/npm/v/@blueconduit/copper-vue?color=%235ca3ea"></a>
+
 This is a library of Vue components that implement BlueConduit's Copper design system. It depends on the `@blueconduit/copper` package for its styles. It uses Storybook to document the components and act as a development environment.
 
 This project still needs some reorganizing done, but the Vue components live in the `src/` directory.
@@ -10,25 +12,22 @@ This project still needs some reorganizing done, but the Vue components live in 
 npm install @blueconduit/copper @blueconduit/copper-vue
 ```
 
+### Note for users of version < 1.0.0
+
+See the note in the root level [README](https://github.com/BlueConduit/copper/blob/main/README.md) about updating your `npm` config.
+
+
 ## Build process
 
 We use the Vue CLI tool to help build the components in order to be published. The build command is:
 
 ```
-npm run build:lib
+npm run build
 ```
 
-Vue CLI looks at `src/index.js` as the entry point and traces all its imports to know what code to transpile and bundle for us. This gives us a couple outputs in the `dist/` directory.
+You probably want to run that command from the root level rather than just this workspace. From the root level the `npm` workspace setup will run the build command in every workspace simultaneously. 
 
-## Publishing new package version
-
-Publishing a new version of the package is simple if you have your npm authorization setup as noted in the parent README. This project's `package.json` file is setup to publish whatever files are in the `dist/` directory. Follow these steps when publishing a new version:
-
-- Run `npm run build:lib` to make sure your latest changes are compiled and placed into the local `dist/` directory
-- Increment the version number in `package.json` appropriately. [Follow SEMVER versioning guidelines](https://semver.org/).
-- Run `npm publish`
-
-This process is simple, but brittle. Look for this to change as this package matures.
+The Vue CLI looks at `src/index.js` as the entry point and traces all its imports to know what code to transpile and bundle for us. This gives us a our outputs in the `dist/` directory.
 
 ## Working on this package
 
