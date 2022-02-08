@@ -15,6 +15,8 @@ export { default as DataTable } from "./components/DataTable/DataTable";
 
 export { default as Form } from "./components/Form/Form";
 
+export { default as Modal } from "./components/Modal/Modal";
+
 export { default as RadioButton } from "./components/RadioButton/RadioButton";
 
 export { default as Select } from "./components/Select/Select";
