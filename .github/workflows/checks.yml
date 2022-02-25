@@ -5,7 +5,7 @@ on:
 
 jobs:
   checks:
-    runs-on: macos-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - name: Checkout
@@ -17,7 +17,7 @@ jobs:
         node-version: 16
 
     - name: Workspace install
-      run: npm install
+      run: pnpm install
 
     - name: Build
-      run: npm run build
+      run: pnpm build
