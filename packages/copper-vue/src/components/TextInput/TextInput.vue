@@ -7,6 +7,7 @@
       :type="type"
       :class="inputClasses"
       :id="id"
+      :name="id"
       :required="required"
       :disabled="disabled"
       :value="value"
