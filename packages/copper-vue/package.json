@@ -1,6 +1,6 @@
 {
   "name": "@blueconduit/copper-vue",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Vue.js implementation of the Copper design system",
   "author": "Jackson Hammond",
   "license": "Apache-2.0",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@blueconduit/copper": "^1.0.5",
+    "@blueconduit/copper": "^1.0.6",
     "@storybook/addon-a11y": "^6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
