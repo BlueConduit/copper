@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.7 (2022-03-08)
+
+
+### Bug Fixes
+
+* text input name prop has correct value ([fc45570](https://github.com/BlueConduit/copper/commit/fc4557025f791263c3c6ecfd57ab600d694e8f03))
+
+
+
+
+
 ## 1.0.6 (2022-03-08)
 
 
