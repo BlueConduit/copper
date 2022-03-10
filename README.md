@@ -1,7 +1,5 @@
 # Copper Design System
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
 Welcome to Copper, BlueConduit's design system!
 
 ## copper

@@ -3,18 +3,16 @@
   "private": true,
   "repository": "git@github.com:BlueConduit/copper.git",
   "license": "Apache-2.0",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "prepare": "husky install",
-    "build": "npm run build --workspaces --if-present"
+    "build": "pnpm -r run build",
+    "ci:publish": "pnpm build && pnpm changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.21.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@storybook/addon-docs": "^6.4.18",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0"
+    "husky": "^7.0.4"
   }
 }

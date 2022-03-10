@@ -5,31 +5,42 @@ on:
     branches:
       - main
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
-  release:
+  version-and-release:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout code repo
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     
     - name: Setup Node 16
       uses: actions/setup-node@v2
       with:
         node-version: 16
     
-    - name: Workspace install
-      run: npm ci
-    
-    - name: Workspace build
-      run: npm run build
+    - name: Install pnpm
+      run: npm i pnpm@latest -g
 
-    - name: Publish packages under the `next` dist tag
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GH_TOKEN: ${{ secrets.GIT_COMMIT_TOKEN }}
-      run: |
-        git config user.name "${{ github.actor }}"
-        git config user.email "${{ github.actor }}@users.noreply.github.com"
-        npx lerna version --conventional-commits --yes
-        npx lerna publish from-package --dist-tag next --yes
+    - name: Setup .npmrc file
+      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+    - name: Setup pnpm config
+      run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
+    - name: Install dependencies
+      ## We're in CI env so --frozen-lockfile is used by default here, fails if there is
+      ## no lockfile present. Neat!
+      run: pnpm install
+
+    - name: Create and publish versions
+      uses: changesets/action@v1
+      with:
+        commit: "chore: update versions"
+        title: "chore: update versions"
+        publish: pnpm ci:publish
