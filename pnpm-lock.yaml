@@ -36,7 +36,7 @@ importers:
   packages/copper-vue:
     specifiers:
       '@babel/core': ^7.15.0
-      '@blueconduit/copper': ^1.0.5
+      '@blueconduit/copper': ^1.0.7
       '@storybook/addon-a11y': ^6.3.12
       '@storybook/addon-actions': ^6.3.12
       '@storybook/addon-essentials': ^6.3.12
@@ -14287,7 +14287,7 @@ packages:
     resolution: {integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==}
     engines: {node: '>=6'}
     dependencies:
-      ts-pnp: 1.2.0
+      ts-pnp: 1.2.0_typescript@3.9.10
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -17354,16 +17354,6 @@ packages:
       typescript: 4.5.5
       v8-compile-cache-lib: 3.0.0
       yn: 3.1.1
-    dev: true
-
-  /ts-pnp/1.2.0:
-    resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
-    engines: {node: '>=6'}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
     dev: true
 
   /ts-pnp/1.2.0_typescript@3.9.10:
