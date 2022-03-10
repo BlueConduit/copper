@@ -11,7 +11,7 @@ env:
 
 jobs:
   version-and-release:
-    runs-on: ubuntu-18.04
+    runs-on: macos-latest
 
     steps:
     - name: Checkout code repo
