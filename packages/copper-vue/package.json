@@ -1,6 +1,6 @@
 {
   "name": "@blueconduit/copper-vue",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Vue.js implementation of the Copper design system",
   "author": "Jackson Hammond",
   "license": "Apache-2.0",
@@ -26,13 +26,13 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@blueconduit/copper": "^1.0.0",
+    "@blueconduit/copper": "^1.0.8",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@blueconduit/copper": "^1.0.7",
+    "@blueconduit/copper": "^1.0.8",
     "@storybook/addon-a11y": "^6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
