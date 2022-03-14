@@ -13,6 +13,8 @@ export { default as CheckboxGroup } from "./components/Checkbox/CheckboxGroup";
 
 export { default as DataTable } from "./components/DataTable/DataTable";
 
+export { default as DataTableSketch } from "./components/DataTableSketch/DataTableSketch";
+
 export { default as Form } from "./components/Form/Form";
 
 export { default as Modal } from "./components/Modal/Modal";
