@@ -29,7 +29,13 @@ Our styles follow the ITCSS structure. More to come here in the future, but this
 We use Gulp.js to compile our Sass styles into CSS. To run the Gulp build process:
 
 ```
-npm run build
+pnpm build
+```
+
+There is a watch command to watch Sass files for changes and recompile:
+
+```
+pnpm build:watch
 ```
 
 This will compile the Sass into `dist/css/copper.css`, and it will also minify that new file and save it at `dist/css/copper.min.css`.
@@ -38,10 +44,4 @@ Either CSS file can be used to get Copper's styles into your project.
 
 ## Publishing new package version
 
-Publishing a new version of the package is simple if you have your npm authorization setup as noted in the parent README. This project's `package.json` file is setup to publish whatever files are in the `dist/` directory. Follow these steps when publishing a new version:
-
-- Run `npm run build` to make sure your latest changes are compiled and placed into the local `dist/` directory
-- Increment the version number in `package.json` appropriately. [Follow SEMVER versioning guidelines](https://semver.org/).
-- Run `npm publish`
-
-This process is simple, but brittle. Look for this to change as this package matures.
+See the root level README for details on publishing new versions of this package.

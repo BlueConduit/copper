@@ -24,11 +24,12 @@ import { Button } from "@blueconduit/copper-vue";
 
 ## Contributing
 
-To get started making a contribution from the repo root level run:
+Keep in mind that this project uses `pnpm` rather than `npm`. To get started making a contribution from the repo root level run:
 
 ```
-npm install
-npm run build
+pnpm install
+pnpm prepare ## install husky's Git hooks
+pnpm build
 ```
 
 This should install all your dependencies, setup your `husky` git hooks (more on `husky` below), and compile the latest code. You should be good to start writing your changes from there.
@@ -60,7 +61,28 @@ Previously, you were required to configure npm, either with your global config f
 
 ## Publishing new package version
 
-We rely on [Lerna](https://lerna.js.org/) to handle versioning and publishing our packages. It also creates our Changelogs. It relies on particular commit messages to automate this process, see the section below for more details.
+We rely on `pnpm` and `changesets` to help version and publish our packages. You can read about [changesets here](https://github.com/changesets/changesets) and using [pnpm with changesets here.](https://pnpm.io/using-changesets) It also helps create Changelogs. The process looks like this:
+
+```
+## Make code changes 
+```
+Create changesets and commit them. Read more about that [here](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md).
+```
+pnpm changeset
+## Commit the changes from that command
+```
+
+When the changes have been merged into `main` and we're ready to release them
+```
+pnpm changeset version
+pnpm install 
+## Commit changes with message like 'chore: release'
+
+## see package.json for what this script does
+pnpm release
+```
+
+We no longer rely on `Lerna` to handle versioning and publishing our packages. 
 
 ## Commit Linting
 

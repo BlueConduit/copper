@@ -22,10 +22,10 @@ See the note in the root level [README](https://github.com/BlueConduit/copper/bl
 We use the Vue CLI tool to help build the components in order to be published. The build command is:
 
 ```
-npm run build
+pnpm build
 ```
 
-You probably want to run that command from the root level rather than just this workspace. From the root level the `npm` workspace setup will run the build command in every workspace simultaneously. 
+You probably want to run that command from the root level rather than just this package. From the root level the `pnpm build` script setup will run the build command in every package simultaneously. 
 
 The Vue CLI looks at `src/index.js` as the entry point and traces all its imports to know what code to transpile and bundle for us. This gives us a our outputs in the `dist/` directory.
 
@@ -33,26 +33,31 @@ The Vue CLI looks at `src/index.js` as the entry point and traces all its import
 
 ### Project setup
 
+**These two commands should be run at the root level**
+
 ```
-npm install
+pnpm install
+pnpm prepare
 ```
 
 ### Run Storybook
 
+Storybook acts as our development environment
+
 ```
-npm run storybook
+pnpm storybook
 ```
 
 ### Run your unit tests
 
 ```
-npm run test:unit
+pnpm test:unit
 ```
 
 ### Lints and fixes files
 
 ```
-npm run lint
+pnpm lint
 ```
 
 ### Customize configuration
