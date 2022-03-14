@@ -36,7 +36,7 @@ importers:
   packages/copper-vue:
     specifiers:
       '@babel/core': ^7.15.0
-      '@blueconduit/copper': ^1.0.7
+      '@blueconduit/copper': ^1.0.8
       '@storybook/addon-a11y': ^6.3.12
       '@storybook/addon-actions': ^6.3.12
       '@storybook/addon-essentials': ^6.3.12

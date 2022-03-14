@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "pnpm -r run build",
-    "ci:publish": "pnpm build && pnpm changeset publish"
+    "release": "pnpm build && pnpm publish -r"
   },
   "devDependencies": {
     "@changesets/cli": "^2.21.0",
