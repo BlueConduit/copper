@@ -51,7 +51,6 @@
             {{ column.label }}
           </span>
         </table-header>
-        <table-header />
       </table-row>
     </table-head>
     <table-body>
@@ -79,6 +78,10 @@
       </table-row>
     </table-body>
   </Table>
+  <!-- Named slot for empty state of the table -->
+  <slot v-if="data.length === 0" name="empty-state">
+    Uh oh, there isn't any data to show here
+  </slot>
   <div class="cu-datatable__pagination" v-if="paginate">
     <div class="cu-datatable__pagination__left-controls">
       <select

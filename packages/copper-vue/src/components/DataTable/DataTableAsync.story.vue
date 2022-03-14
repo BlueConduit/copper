@@ -17,8 +17,7 @@
 </template>
 
 <script>
-// import DataTable  from "./DataTable.vue";
-import { DataTable } from "../../../dist/copper-vue.common";
+import DataTable from "./DataTable.vue";
 import data from "./BootstrapData.js";
 import { computed, ref } from "vue";
 import { onMounted } from "vue";
