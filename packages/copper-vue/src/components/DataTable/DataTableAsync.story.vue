@@ -3,21 +3,27 @@
     >This story waits 1.5 seconds before it loads any data, as a rudimentary way
     to simulate async data fetching.</span
   >
-  <data-table
-    :data="dataSubset"
-    :columns="columns"
-    @editRow="handleEditRow"
-    paginate
-    :index="index"
-    :pageSize="pageSize"
-    :totalSize="totalSize"
-    @change-page="getNewPage"
-    @change-page-size="changePageSize"
-  />
+  <template v-if="loading">
+    <data-table-sketch :columns="columns" :rowCount="pageSize" />
+  </template>
+  <template v-else>
+    <data-table
+      :data="dataSubset"
+      :columns="columns"
+      @editRow="handleEditRow"
+      paginate
+      :index="index"
+      :pageSize="pageSize"
+      :totalSize="totalSize"
+      @change-page="getNewPage"
+      @change-page-size="changePageSize"
+    />
+  </template>
 </template>
 
 <script>
 import DataTable from "./DataTable.vue";
+import DataTableSketch from "../DataTableSketch/DataTableSketch.vue";
 import data from "./BootstrapData.js";
 import { computed, ref } from "vue";
 import { onMounted } from "vue";
@@ -26,9 +32,10 @@ export default {
   name: "DataTableAsync",
   components: {
     DataTable,
+    DataTableSketch,
   },
   setup() {
-    const columns = ref([""]);
+    const columns = ref([]);
     columns.value = [
       {
         id: "id",
@@ -48,6 +55,7 @@ export default {
       },
     ];
 
+    const loading = ref(true);
     const tableData = ref([]);
     const pageSize = ref(5);
     const index = ref(0);
@@ -93,6 +101,7 @@ export default {
         tableData.value = data;
         // simulating getting the number of rows back in an API response
         totalSize.value = 53;
+        loading.value = false;
       }, 1500);
     };
 
@@ -101,6 +110,7 @@ export default {
     });
 
     return {
+      loading,
       dataSubset,
       columns,
       pageSize,

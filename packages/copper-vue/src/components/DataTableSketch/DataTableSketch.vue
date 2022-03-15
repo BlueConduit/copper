@@ -10,7 +10,7 @@
     <table-body>
       <table-row v-for="n in rowCount" :key="n">
         <table-cell v-for="(column, col_index) in columns" :key="col_index">
-          <span></span>
+          <div class="cu-sketch-placeholder"></div>
         </table-cell>
       </table-row>
     </table-body>
