@@ -82,7 +82,7 @@
   <slot v-if="data.length === 0" name="empty-state">
     Uh oh, there isn't any data to show here
   </slot>
-  <div class="cu-datatable__pagination" v-if="paginate">
+  <div class="cu-datatable__pagination" v-if="paginate && data.length !== 0">
     <div class="cu-datatable__pagination__left-controls">
       <select
         id="pagination-select"

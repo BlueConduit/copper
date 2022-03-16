@@ -2,7 +2,7 @@
   <div class="cu-stack-xl">
     <div class="cu-stack">
       <p>Base empty table</p>
-      <data-table :data="data" :columns="columns" sortable />
+      <data-table :data="data" :columns="columns" sortable paginate />
     </div>
 
     <div class="cu-stack">
