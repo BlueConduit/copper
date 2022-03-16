@@ -20,7 +20,7 @@ Our styles follow the ITCSS structure. More to come here in the future, but this
 - 02_tools: A place for Sass [mixins](https://sass-lang.com/documentation/at-rules/mixin) and [functions](https://sass-lang.com/documentation/at-rules/function), think reusable scripts we can call to create our styles with
 - 03_normalize: Simply a place to add our [Normalizing CSS](https://necolas.github.io/normalize.css/) styles, and the first actual styling rules appear here.
 - 04_elements: Styling for entire elements. Typography rules are what's here right now.
-- 05_layout: Classes built to help layout the UIs we make with Copper.
+- 05_objects: Classes built to help layout the UIs we make with Copper.
 - 06_components: Styles specifically intended for Copper components
 - 07_overrides: Classes that should take precedence over others, will probably be mostly spacing and positioning classes
 
