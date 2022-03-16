@@ -135,7 +135,7 @@
 </template>
 
 <script>
-import { computed, reactive, watchEffect } from "vue";
+import { computed, reactive } from "vue";
 
 import Button from "../Button/Button.vue";
 import Table from "../Table/Table.vue";
@@ -334,7 +334,6 @@ export default {
     const lastPageNumber = computed(() =>
       Math.ceil(props.totalSize / props.pageSize)
     );
-    const watchLastPageNumber = watchEffect(() => console.log(props.totalSize));
 
     const pageNumberButtons = computed(() => {
       let buttonLabels = [];
@@ -385,7 +384,6 @@ export default {
       rangeUpperBound,
       currentPageNumber,
       lastPageNumber,
-      watchLastPageNumber,
       pageNumberButtons,
     };
   },
