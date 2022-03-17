@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.1.0
+
+### Minor Changes
+
+- bc876be: Add a loading state to copper and empty state to data tables
+
+### Patch Changes
+
+- Updated dependencies [bc876be]
+  - @blueconduit/copper@1.1.0
+
 ## 1.0.8
 
 ### Patch Changes
