@@ -19,7 +19,6 @@
     select:invalid,
     input[type='text']:invalid,
     input[type='number']:invalid,
-    input.datepicker,
     textarea:invalid {
       border-color: dt.$notification_error;
 
@@ -35,7 +34,6 @@
     select:valid,
     input[type='text']:valid,
     input[type='number']:valid,
-    input.datepicker,
     textarea:valid {
       border-color: dt.$notification_success;
       
