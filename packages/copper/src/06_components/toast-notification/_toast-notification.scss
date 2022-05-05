@@ -2,11 +2,7 @@
 @use "../../02_tools/mixins";
 
 .cu-toast-notification {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   width: 18.75rem;
-  height: 5rem;
   border-radius: dt.$border-radius;
   box-shadow: dt.$modal-shadow-default;
   background-color: dt.$notification_info_background;
@@ -35,19 +31,7 @@
     display: flex;
     flex-direction: row;
     padding: 1.25rem;
-  }
-
-  .cu-toast-notification__icon {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-  }
-  
-  .cu-toast-notification__text {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2
+    gap: 0.5rem;
   }
 
   .cu-toast-notification__header {
