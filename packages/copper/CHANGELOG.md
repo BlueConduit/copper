@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- 5873882: Fix alignment and height of toast notifs
+- 403b6e4: Add validation styles for number text inputs
+
 ## 1.1.0
 
 ### Minor Changes
