@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.0
+
+### Minor Changes
+
+- 13342f0: Adds a new prop for Data Tables to allow them to be uneditable
+
 ## 1.1.0
 
 ### Minor Changes
