@@ -61,6 +61,7 @@
         <table-cell
           @click="$emit('editRow', { ...row })"
           class="cu-datatable__edit-icon"
+          v-if="editable"
         >
           <svg
             width="24"
@@ -309,6 +310,16 @@ export default {
     pageSize: {
       type: Number,
       required: true,
+    },
+
+    /**
+     * True if the data table rows should display the edit icon when they are
+     * hovered over. Clicking the icon will emit the data from the row. Default
+     * is true.
+     */
+    editable: {
+      type: Boolean,
+      default: true,
     },
   },
 
