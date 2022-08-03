@@ -20,7 +20,8 @@
     "system"
   ],
   "files": [
-    "dist/**/*"
+    "css",
+    "scss"
   ],
   "scripts": {
     "test": "test",
