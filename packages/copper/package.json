@@ -27,7 +27,7 @@
     "test": "test",
     "build": "pnpm clean && gulp build",
     "build:watch": "gulp watchStyles",
-    "clean": "rimraf dist/**"
+    "clean": "rimraf css/**"
   },
   "dependencies": {
     "sass": "^1.38.2"

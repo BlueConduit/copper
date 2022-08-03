@@ -6,7 +6,7 @@ const rename = require("gulp-rename");
 
 function buildStyles() {
   return gulp
-    .src("src/**/*.scss")
+    .src("scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("css"));
 }
@@ -37,7 +37,7 @@ const buildSteps = series(buildStyles, minifyStyles);
 function watchStyles() {
   return gulp
     .watch(
-      ['src/**/*.scss'],
+      ['scss/**/*.scss'],
       { ignoreInitial: false },
       series(buildStyles, minifyStyles)
     );
