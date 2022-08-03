@@ -9,7 +9,7 @@ This package contains the Sass and CSS styles that control how our components sh
 Import the compiled css file in your project to use it.
 
 ```js
-import "@blueconduit/copper/dist/css/copper.css";
+import "@blueconduit/copper/css/copper.css";
 ```
 
 ## copper-vue
