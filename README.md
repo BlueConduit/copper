@@ -12,6 +12,27 @@ Import the compiled css file in your project to use it.
 import "@blueconduit/copper/css/copper.css";
 ```
 
+If you're using Sass in your project you can import the root `scss` file instead.
+
+```CSS
+// your project's index.scss
+
+@use "@blueconduit/copper/scss/copper";
+```
+
+You can also access the variables, functions, and mixins from `copper` with `@use`. For example, to get color variables from our design tokens in `scss/01_settings/design-tokens.scss`:
+
+```CSS
+// your project's index.scss
+
+@use "@blueconduit/copper/scss/copper";
+@use "@blueconduit/copper/scss/01_settings/design-tokens" as dt;
+
+.your-css-class {
+  color: dt.$primary;
+}
+```
+
 ## copper-vue
 
 This package contains the vue implementations of our components. It lives in the `packages/copper-vue/` directory.
