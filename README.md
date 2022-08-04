@@ -66,7 +66,7 @@ npm install @blueconduit/copper
 or to use the Vue components
 
 ```
-npm install @blueconduit/copper @blueconduit/copper-vue
+npm install @blueconduit/copper-vue
 ```
 
 ### Note for users of version < 1.0.0

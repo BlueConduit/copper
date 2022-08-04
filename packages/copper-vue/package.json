@@ -15,7 +15,8 @@
   },
   "main": "dist/copper-vue.common.js",
   "files": [
-    "dist/**/*"
+    "dist",
+    "index.scss"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -26,13 +27,11 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@blueconduit/copper": "^1.1.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@blueconduit/copper": "^1.1.0",
     "@storybook/addon-a11y": "^6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
@@ -61,6 +60,7 @@
     "vue-loader": "^16.5.0"
   },
   "dependencies": {
+    "@blueconduit/copper": "workspace:*",
     "classnames": "^2.3.1"
   }
 }

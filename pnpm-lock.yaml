@@ -38,7 +38,7 @@ importers:
   packages/copper-vue:
     specifiers:
       '@babel/core': ^7.15.0
-      '@blueconduit/copper': ^1.1.0
+      '@blueconduit/copper': workspace:*
       '@storybook/addon-a11y': ^6.3.12
       '@storybook/addon-actions': ^6.3.12
       '@storybook/addon-essentials': ^6.3.12
@@ -67,10 +67,10 @@ importers:
       vue-jest: ^5.0.0-0
       vue-loader: ^16.5.0
     dependencies:
+      '@blueconduit/copper': link:../copper
       classnames: 2.3.1
     devDependencies:
       '@babel/core': 7.17.5
-      '@blueconduit/copper': 1.1.1
       '@storybook/addon-a11y': 6.4.19
       '@storybook/addon-actions': 6.4.19
       '@storybook/addon-essentials': 6.4.19_e537aqgoowhwfh7whnv7ksqxuq
@@ -1540,12 +1540,6 @@ packages:
 
   /@base2/pretty-print-object/1.0.1:
     resolution: {integrity: sha512-4iri8i1AqYHJE2DstZYkyEprg6Pq6sKx3xn5FpySk9sNhH7qN2LLlHJCfDTZRILNwQNPD7mATWM0TBui7uC1pA==}
-    dev: true
-
-  /@blueconduit/copper/1.1.1:
-    resolution: {integrity: sha512-nfHjYm+Yp/TlCTyVsvYWDA85HRTXT9Jr/3vwtHGWR+aSzwO0tvuvQpsSdmK+6VSgjCJllpivBJosqW+6jbtqog==}
-    dependencies:
-      sass: 1.49.9
     dev: true
 
   /@changesets/apply-release-plan/5.0.5:

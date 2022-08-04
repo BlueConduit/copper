@@ -1,5 +1,5 @@
 // For using styles in the @blueconduit/copper package
-import "@blueconduit/copper/dist/css/copper.css";
+import "@blueconduit/copper/css/copper.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
