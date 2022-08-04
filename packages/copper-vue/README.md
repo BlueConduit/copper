@@ -9,7 +9,7 @@ This project still needs some reorganizing done, but the Vue components live in 
 ## Installing in another project
 
 ```
-npm install @blueconduit/copper @blueconduit/copper-vue
+npm install @blueconduit/copper-vue
 ```
 
 ### Note for users of version < 1.0.0
