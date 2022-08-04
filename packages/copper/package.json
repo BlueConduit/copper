@@ -20,12 +20,14 @@
     "system"
   ],
   "files": [
-    "dist/**/*"
+    "css",
+    "scss"
   ],
   "scripts": {
     "test": "test",
-    "build": "gulp build",
-    "build:watch": "gulp watchStyles"
+    "build": "pnpm clean && gulp build",
+    "build:watch": "gulp watchStyles",
+    "clean": "rimraf css/**"
   },
   "dependencies": {
     "sass": "^1.38.2"
@@ -35,6 +37,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-install": "^1.1.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.0.0"
+    "gulp-sass": "^5.0.0",
+    "rimraf": "^3.0.2"
   }
 }

@@ -2,9 +2,9 @@
 
 <a href="https://www.npmjs.com/package/@blueconduit/copper"><img alt="NPM Status" src="https://img.shields.io/npm/v/@blueconduit/copper?color=%235ca3ea"></a>
 
-Copper's styles are defined in the `src/` directory.
+Copper's styles are defined in the `scss/` directory.
 
-The root file is `src/copper.scss`. It essentially imports all the styles into one place, and is the file that Gulp compiles from Sass into a CSS file.
+The root file is `scss/copper.scss`. It essentially imports all the styles into one place, and is the file that Gulp compiles from Sass into a CSS file.
 
 ## Installing in another project
 
@@ -38,7 +38,7 @@ There is a watch command to watch Sass files for changes and recompile:
 pnpm build:watch
 ```
 
-This will compile the Sass into `dist/css/copper.css`, and it will also minify that new file and save it at `dist/css/copper.min.css`.
+This will compile the Sass into `css/copper.css`, and it will also minify that new file and save it at `css/copper.min.css`.
 
 Either CSS file can be used to get Copper's styles into your project.
 

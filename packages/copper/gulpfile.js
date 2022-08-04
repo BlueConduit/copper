@@ -6,14 +6,14 @@ const rename = require("gulp-rename");
 
 function buildStyles() {
   return gulp
-    .src("src/**/*.scss")
+    .src("scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("dist/css"));
+    .pipe(gulp.dest("css"));
 }
 
 function minifyStyles() {
   return gulp
-    .src("dist/css/copper.css")
+    .src("css/copper.css")
     .pipe(rename("copper.min.css"))
     .pipe(
       cleanCSS({ debug: true }, (details) => {
@@ -29,17 +29,19 @@ function minifyStyles() {
         );
       })
     )
-    .pipe(gulp.dest("dist/css"));
+    .pipe(gulp.dest("css"));
 }
+
+const buildSteps = series(buildStyles, minifyStyles);
 
 function watchStyles() {
   return gulp
     .watch(
-      ['src/**/*.scss'],
+      ['scss/**/*.scss'],
       { ignoreInitial: false },
       series(buildStyles, minifyStyles)
     );
 }
 
-exports.build = series(buildStyles, minifyStyles);
+exports.build = buildSteps;
 exports.watchStyles = watchStyles;

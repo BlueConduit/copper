@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
-/dist
+css
 
 npm-debug.log*
+*.tgz
 
 .vscode
