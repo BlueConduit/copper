@@ -1,6 +1,6 @@
 {
   "name": "@blueconduit/copper-vue",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Vue.js implementation of the Copper design system",
   "author": "Jackson Hammond",
   "license": "Apache-2.0",
