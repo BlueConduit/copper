@@ -31,6 +31,9 @@ export { default as TableHead } from "./components/Table/TableHead";
 export { default as TableHeader } from "./components/Table/TableHeader";
 export { default as TableRow } from "./components/Table/TableRow";
 
+export { default as Tooltip } from "./components/Tooltip/Tooltip";
+export { default as TooltipContent } from "./components/Tooltip/TooltipContent";
+
 export { default as TextInput } from "./components/TextInput/TextInput";
 
 export { default as ToastNotification } from "./components/ToastNotification/ToastNotification";
