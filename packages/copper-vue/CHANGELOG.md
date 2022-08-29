@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- 465bc27: Define simple Tooltip component
+
+### Patch Changes
+
+- Updated dependencies [465bc27]
+  - @blueconduit/copper@2.1.0
+
 ## 2.0.1
 
 ### Patch Changes
