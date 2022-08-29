@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.1
+
+### Patch Changes
+
+- Include tooltips in copper-vue bundle
+
 ## 2.1.0
 
 ### Minor Changes
