@@ -63,7 +63,13 @@ $spacings: (
   "xl": $spacing-xl,
 );
 
-// SHADOWS 
+// SHADOWS
+
+/*
+* TODO Reconcile these two sets of shadow tokens. Having shadow tokens
+* for "levels" rather than for specific components is probably the way
+* to go. Next major version we should deprecate some of these.
+*/
 
 // Button shadows
 $button-shadow-default: 0px 1px 2px rgba(0, 0, 0, 0.1);
@@ -78,6 +84,11 @@ $modal-shadow-default: 0px 10px 30px rgba(0, 0, 0, 0.2);
 
 // Form input focus
 $form-input-focus-shadow: 0px 0px 10px rgba(92, 163, 234, 0.3);
+
+// Lead Out Drop Shadows
+$lo-shadow-level-1: 0px 4px 6px rgba(70, 70, 70, 0.25);
+$lo-shadow-level-2: 0px 4px 6px 2px rgba(70, 70, 70, 0.25);
+$lo-shadow-level-3: 0px 4px 6px 4px rgba(70, 70, 70, 0.25);
 
 // CORNERS
 $border-radius: 0.25rem;
