@@ -12,6 +12,10 @@ export default {
     className: {
       control: { type: "text" },
     },
+    size: {
+      options: ["regular", "large"],
+      control: { type: "select" },
+    },
   },
 };
 
@@ -31,6 +35,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
   className: "",
+  size: "regular",
 };
 
 export const Disabled = Template.bind({});

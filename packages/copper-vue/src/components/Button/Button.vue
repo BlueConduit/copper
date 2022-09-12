@@ -28,6 +28,16 @@ export default {
       default: "primary",
     },
     /**
+     * Controls if this is a regular or large sized button
+     */
+    size: {
+      type: String,
+      validator: function (value) {
+        return ["regular", "large"].indexOf(value) !== -1;
+      },
+      default: "regular",
+    },
+    /**
      * Use this prop to add custom CSS class names to the Button as needed
      */
     className: {
@@ -52,6 +62,7 @@ export default {
         "cu-button": true,
         "cu-button-secondary": props.variant === "secondary",
         "cu-button-grey": props.variant === "grey",
+        "cu-button--large": props.size === "large",
       })),
     };
   },

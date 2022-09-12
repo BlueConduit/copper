@@ -32,6 +32,12 @@
     opacity: 0.3;
   }
 
+  &.cu-button--large {
+    padding: functions.getSpacing("md");
+    border-radius: 16px;
+    font-size: 1.125rem;
+  }
+
 }
 
 .cu-button-secondary {
