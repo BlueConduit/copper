@@ -9,7 +9,7 @@
 .cu-button {
   border-radius: dt.$border-radius;
   padding: functions.getSpacing("sm") functions.getSpacing("md");
-  @include mixins.typography-semi-bold;
+  @include mixins.typography-button;
   border: none;
   cursor: pointer;
   appearance: none;

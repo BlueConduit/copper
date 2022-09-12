@@ -8,17 +8,56 @@ body {
   @include mixins.typography-base;
 }
 
+.display-1 {
+  font-size: 3.375rem;
+  line-height: calc(60 / 54);
+}
+
+.display-2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
 h1 {
   font-size: 2rem;
-  @include mixins.typography-bold;
+  line-height: 1.25;
+  @include mixins.typography-medium;
 }
 
 h2 {
   font-size: 1.5rem;
-  @include mixins.typography-bold;
+  line-height: calc(34 / 24);
+  @include mixins.typography-medium;
 }
 
 h3 {
   font-size: 1.5rem;
+  line-height: calc(34 / 24);
   @include mixins.typography-no-bold;
+}
+
+.subhead-1 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  @include mixins.typography-medium;
+}
+
+.subhead-2 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  @include mixins.typography-no-bold;
+}
+
+.body-1 {
+  @include mixins.typography-base;
+}
+
+.body-2 {
+  font-size: 0.875rem;
+}
+
+figcaption,
+.caption {
+  font-size: 0.75rem;
+  line-height: calc(16 / 12);
 }
